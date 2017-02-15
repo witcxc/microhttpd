@@ -73,6 +73,7 @@ test_values (void *cls,
 	     const char *key,
 	     const char *value)
 {
+    printf("[%s:%s]\n", key, value);
   if ( (0 == strcmp (key, "a")) &&
        (0 == strcmp (value, "b")) )
     matches += 1;
@@ -187,5 +188,6 @@ main (int argc, char *const *argv)
   if (errorCount != 0)
     fprintf (stderr, "Error (code: %u)\n", errorCount);
   curl_global_cleanup ();
+  printf("%d\n",matches);
   return errorCount != 0;       /* 0 == pass */
 }

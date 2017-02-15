@@ -105,6 +105,7 @@ post_iterator (void *cls,
 {
   int *eok = cls;
 
+  fprintf(stdout, "post data[%s:%s]\n", key, value);
   if ((0 == strcmp (key, "name")) &&
       (size == strlen ("daniel")) && (0 == strncmp (value, "daniel", size)))
     (*eok) |= 1;
